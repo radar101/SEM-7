@@ -1,13 +1,15 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-struct Item {
+struct Item
+{
 	int weight;
 	int value;
-	Item(int w, int v) : weight(w), value(v){}
+	Item(int w, int v) : weight(w), value(v) {}
 };
 
-bool compare(Item a, Item b) {
+bool compare(Item a, Item b)
+{
 	double r1 = (double)a.value / a.weight;
 	double r2 = (double)b.value / b.weight;
 	return r1 > r2;
@@ -19,9 +21,9 @@ double fractionalKnapsack(int W, vector<Item> &items)
 
 	int curWeight = 0;
 	double finalValue = 0.0;
-	for(auto i : items)
+	for (auto i : items)
 	{
-		if(curWeight + i.weight <= W)
+		if (curWeight + i.weight <= W)
 		{
 			curWeight += i.weight;
 			finalValue += i.value;
@@ -36,10 +38,11 @@ double fractionalKnapsack(int W, vector<Item> &items)
 	return finalValue;
 }
 
-int main() {
+int main()
+{
 	int W = 50;
 
 	vector<Item> item = {{10, 60}, {20, 100}, {30, 120}};
 	double ans = fractionalKnapsack(W, item);
-	cout<<ans<<endl;
+	cout << ans << endl;
 }

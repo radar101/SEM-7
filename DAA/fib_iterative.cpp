@@ -1,11 +1,10 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
 
 int fibIterative(int n)
 {
 	int a = 0, b = 1, fib;
-	for(int i=2;i<=n;i++)
+	for (int i = 2; i <= n; i++)
 	{
 		fib = a + b;
 		a = b;
@@ -18,5 +17,5 @@ int main()
 {
 	int n = 6;
 	int ans = fibIterative(n);
-	cout<<ans<<endl;
+	cout << ans << endl;
 }
