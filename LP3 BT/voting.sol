@@ -12,19 +12,12 @@ contract VotingSystem {
     address public admin; // Add an admin address
 
 
-    // constructor(string[] memory _candidateNames) {
-    //     for (uint256 i = 0; i < _candidateNames.length; i++) {
-    //         candidates.push(Candidate({name: _candidateNames[i], voteCount: 0}));
-    //     }
-    // }
-
     constructor(string[] memory _candidateNames) {
-        admin = msg.sender; // Set the contract creator as the admin
         for (uint256 i = 0; i < _candidateNames.length; i++) {
             candidates.push(Candidate({name: _candidateNames[i], voteCount: 0}));
         }
     }
-
+    
     modifier onlyAdmin() {
         require(msg.sender == admin, "Only the admin can call this function.");
         _;

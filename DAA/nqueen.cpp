@@ -103,6 +103,8 @@ vector<vector<string>> solveNQueen(int n)
 		board[i] = s;
 	}
 
+	// Placing queen at the first place
+	board[0][0] = 'Q';
 	solve(0, board, ans, n);
 	return ans;
 }
@@ -111,7 +113,7 @@ int main()
 {
 	int n;
 	cin >> n;
-	vector<vector<string>> ans = solveNQueen1(n);
+	vector<vector<string>> ans = solveNQueen(n);
 
 	for (auto i : ans)
 	{

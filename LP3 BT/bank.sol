@@ -11,7 +11,7 @@ contract Bank {
         return "Account created";
     }
 
-    function deposit(uint amount) public  payable  returns(string memory) {
+    function deposit(uint amount) public payable returns(string memory) {
         require(user_exist[msg.sender] == true, "Account not created");
         require(amount > 0, "Amount should be greater than 0");
         user_account[msg.sender] += amount;

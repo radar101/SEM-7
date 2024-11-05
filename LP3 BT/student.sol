@@ -28,7 +28,9 @@ contract StudentData {
     }
 
     // Function to retrieve a student's information by their index in the array
-    function getStudent(uint _index) public view returns (uint, string memory, uint) {
+    function getStudent(
+        uint _index
+    ) public view returns (uint, string memory, uint) {
         require(_index < students.length, "Invalid student index");
         Student memory s = students[_index];
         return (s.id, s.name, s.grade);
