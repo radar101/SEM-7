@@ -22,9 +22,9 @@ int partitionDeterministic(vector<int> &arr, int low, int high) {
 
 // Randomized Partition: Selects a random pivot within range [low, high]
 int partitionRandomized(vector<int> &arr, int low, int high) {
-    int randomPivotIndex = low + rand() % (high - low + 1); // Select a random index
-    swap(arr[low], arr[randomPivotIndex]); // Swap it with the first element
-    return partitionDeterministic(arr, low, high); // Now call deterministic partition
+    int randomPivotIndex = low + rand() % (high - low + 1); 
+    swap(arr[low], arr[randomPivotIndex]); 
+    return partitionDeterministic(arr, low, high);
 }
 
 // Deterministic Quick Sort
